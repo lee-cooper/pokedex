@@ -1,15 +1,9 @@
-const mainContent: HTMLElement | null = document.getElementById('mainContent');
-const pokemonCount: number = 100;
+import { Pokemon } from "./models/pokemon.interface";
 
-interface Pokemon {
-  id: number;
-  name: string;
-  image: string;
-  type: string;
-}
+const mainContent: HTMLElement | null = document.getElementById('mainContent');
+const pokemonCount: number = 152;
 
 const fetchData = async () => {
-  console.log('test');
   let pokemonList: Pokemon[] = [];
   for (let index = 1; index < pokemonCount; index++) {
     const pokemon = await getPokemonById(index);

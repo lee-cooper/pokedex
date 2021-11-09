@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
+    "module": "ESNext",
     "outDir": "public/js",
     "rootDir": "src",
     "strict": true,
