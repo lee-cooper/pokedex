@@ -1,0 +1,22 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Basic pokedex app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lee-cooper/pokedex.git"
+  },
+  "author": "Lee Cooper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lee-cooper/pokedex/issues"
+  },
+  "homepage": "https://github.com/lee-cooper/pokedex#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
