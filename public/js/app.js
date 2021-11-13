@@ -1,4 +1,4 @@
-const mainContent = document.getElementById('mainContent');
+const mainContent = document.getElementById("mainContent");
 const pokemonCount = 152;
 const getPokemonList = async () => {
     let pokemonList = [];
@@ -13,7 +13,7 @@ const getPokemonById = async (id) => {
     const pokemon = await data.json();
     const pokemonType = pokemon.types
         .map((poke) => poke.type.name)
-        .join(", ");
+        .join(" / ");
     return {
         id: pokemon.id,
         name: pokemon.name,
@@ -22,12 +22,12 @@ const getPokemonById = async (id) => {
     };
 };
 const displayPokemon = (pokemonList) => {
-    pokemonList.forEach(pokemon => {
+    pokemonList.forEach((pokemon) => {
         let output = `
         <div class="card">
-            <h1 class="card--name">#${pokemon.id}: ${pokemon.name}</h1>
-            <img class="card--image" src=${pokemon.image} alt=${pokemon.name} />
-            <span class="card--details">${pokemon.type}</span>
+            <h1>#${pokemon.id} ${pokemon.name}</h1>
+            <img src=${pokemon.image} alt=${pokemon.name} />
+            <span>Type: ${pokemon.type}</span>
         </div>
     `;
         mainContent.innerHTML += output;

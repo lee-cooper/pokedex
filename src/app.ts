@@ -1,6 +1,6 @@
 import { Pokemon } from "./models/pokemon.interface";
 
-const mainContent: HTMLElement | null = document.getElementById('mainContent');
+const mainContent: HTMLElement | null = document.getElementById("mainContent");
 const pokemonCount: number = 152;
 
 const getPokemonList = async (): Promise<Pokemon[]> => {
@@ -11,35 +11,35 @@ const getPokemonList = async (): Promise<Pokemon[]> => {
   }
 
   return pokemonList;
-}
+};
 
 const getPokemonById = async (id: number): Promise<Pokemon> => {
-  const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-  const pokemon: any = await data.json()
+  const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const pokemon: any = await data.json();
   const pokemonType: string = pokemon.types
     .map((poke: any) => poke.type.name)
-    .join(", ")
+    .join(" / ");
 
   return {
     id: pokemon.id,
     name: pokemon.name,
     image: `${pokemon.sprites.front_default}`,
     type: pokemonType,
-  }
-}
+  };
+};
 
 const displayPokemon = (pokemonList: Pokemon[]): void => {
-  pokemonList.forEach(pokemon => {
+  pokemonList.forEach((pokemon) => {
     let output: string = `
         <div class="card">
-            <h1 class="card--name">#${pokemon.id}: ${pokemon.name}</h1>
-            <img class="card--image" src=${pokemon.image} alt=${pokemon.name} />
-            <span class="card--details">${pokemon.type}</span>
+            <h1>#${pokemon.id} ${pokemon.name}</h1>
+            <img src=${pokemon.image} alt=${pokemon.name} />
+            <span>Type: ${pokemon.type}</span>
         </div>
-    `
-    mainContent!.innerHTML += output
+    `;
+    mainContent!.innerHTML += output;
   });
-}
+};
 
 const pokemonList = await getPokemonList();
 displayPokemon(pokemonList);
