@@ -1,6 +1,6 @@
-import { Pokemon } from "./models/pokemon.interface";
+import { Pokemon } from './models/pokemon.interface';
 
-const mainContent: HTMLElement | null = document.getElementById("mainContent");
+const mainContent: HTMLElement | null = document.getElementById('mainContent');
 const pokemonCount: number = 152;
 
 const getPokemonList = async (): Promise<Pokemon[]> => {
@@ -18,7 +18,7 @@ const getPokemonById = async (id: number): Promise<Pokemon> => {
   const pokemon: any = await data.json();
   const pokemonType: string = pokemon.types
     .map((poke: any) => poke.type.name)
-    .join(" / ");
+    .join(' / ');
 
   return {
     id: pokemon.id,

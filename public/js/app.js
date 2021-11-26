@@ -1,4 +1,4 @@
-const mainContent = document.getElementById("mainContent");
+const mainContent = document.getElementById('mainContent');
 const pokemonCount = 152;
 const getPokemonList = async () => {
     let pokemonList = [];
@@ -13,7 +13,7 @@ const getPokemonById = async (id) => {
     const pokemon = await data.json();
     const pokemonType = pokemon.types
         .map((poke) => poke.type.name)
-        .join(" / ");
+        .join(' / ');
     return {
         id: pokemon.id,
         name: pokemon.name,
