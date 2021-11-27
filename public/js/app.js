@@ -1,5 +1,5 @@
 const mainContent = document.getElementById('mainContent');
-const pokemonCount = 152;
+const pokemonCount = 2;
 const getPokemonList = async () => {
     let pokemonList = [];
     for (let index = 1; index < pokemonCount; index++) {
@@ -33,6 +33,6 @@ const displayPokemon = (pokemonList) => {
         mainContent.innerHTML += output;
     });
 };
-const pokemonList = await getPokemonList();
-displayPokemon(pokemonList);
 export {};
+// const pokemonList = await getPokemonList();
+// displayPokemon(pokemonList);

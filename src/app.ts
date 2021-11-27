@@ -1,7 +1,7 @@
 import { Pokemon } from './models/pokemon.interface';
 
 const mainContent: HTMLElement | null = document.getElementById('mainContent');
-const pokemonCount: number = 152;
+const pokemonCount: number = 2;
 
 const getPokemonList = async (): Promise<Pokemon[]> => {
   let pokemonList: Pokemon[] = [];
@@ -41,5 +41,5 @@ const displayPokemon = (pokemonList: Pokemon[]): void => {
   });
 };
 
-const pokemonList = await getPokemonList();
-displayPokemon(pokemonList);
+// const pokemonList = await getPokemonList();
+// displayPokemon(pokemonList);
